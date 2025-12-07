@@ -25,3 +25,5 @@ dist-ssr
 *.sw?
 .env
 frontend/.env
+truestate_assignment_dataset.csv
+*.csv
