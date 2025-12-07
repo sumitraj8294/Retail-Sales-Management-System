@@ -1,0 +1,169 @@
+/* root layout */
+.layout {
+  display: flex;
+  min-height: 100vh;
+  background: #f4f6fb;
+  font-family: "Segoe UI", sans-serif;
+  overflow-x: hidden; 
+}
+
+/* sidebar styles */
+.sidebar {
+  width: 230px;
+  min-width: 230px;
+  background: #0f172a;
+  color: white;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.sidebar h3 {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 10px 6px;
+  cursor: pointer;
+  color: #cbd5f5;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.sidebar li:hover {
+  background: #1e293b;
+}
+
+.sidebar li.active {
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+}
+
+.sidebar-title {
+  margin-top: 18px;
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+/* main area */
+.main-content {
+  margin-left: 250px;
+  padding: 24px;
+  width: calc(100% - 250px);
+  max-width: 100%;
+  overflow-x: hidden; 
+}
+
+/* page header */
+
+.page-header {
+  margin-bottom: 12px;
+}
+
+.page-header h1 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.page-header p {
+  font-size: 13px;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+/* top filter bar style */
+.top-filter-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;  /* ✅ Allows wrapping instead of breaking */
+}
+
+.filter-chip-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap; /* ✅ Prevents overflow on small screens */
+  max-width: 100%;
+}
+
+.top-search {
+  width: 260px;
+  max-width: 100%;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 13px;
+}
+
+/* =========================
+   FILTER CHIPS
+========================= */
+.filter-chip select,
+.filter-chip input {
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  padding: 7px 12px;
+  border-radius: 8px;
+  font-size: 12.5px;
+  cursor: pointer;
+  max-width: 160px;
+}
+
+.filter-chip select:hover,
+.filter-chip input:hover {
+  background: #f1f5f9;
+}
+
+.sort-chip select {
+  background: #f1f5f9;
+  font-weight: 600;
+}
+
+/* =========================
+   KPI CARDS (STABLE GRID)
+========================= */
+.kpi-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.kpi-card {
+  background: white;
+  padding: 18px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   VIEW ALL BUTTON
+========================= */
+.view-all-btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+}
+
+.view-all-btn:hover {
+  background: #1d4ed8;
+}

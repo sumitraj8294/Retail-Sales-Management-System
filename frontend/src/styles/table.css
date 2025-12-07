@@ -1,0 +1,88 @@
+
+.table-scroll-container {
+  max-height: 420px;
+  overflow: auto;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.sales-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 1200px; /* enables horizontal scroll */
+}
+
+.sales-table thead {
+  background: #f1f5f9;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.sales-table thead th {
+  padding: 12px 14px;
+  text-align: left;
+  font-weight: 600;
+  color: #0f172a;
+  border-bottom: 1px solid #e5e7eb;
+  white-space: nowrap;
+}
+
+.sales-table tbody td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+  white-space: nowrap;
+}
+
+.sales-table tbody tr:nth-child(even) {
+  background: #fafafa;
+}
+
+.sales-table tbody tr:hover {
+  background: #f0f9ff;
+  transition: background 0.2s ease;
+}
+
+
+.sales-amount {
+  font-weight: 600;
+  color: #16a34a;
+}
+
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 90%;
+  height: 85%;
+  overflow: auto;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.close-btn {
+  float: right;
+  border: none;
+  background: #dc2626;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  background: #b91c1c;
+}
