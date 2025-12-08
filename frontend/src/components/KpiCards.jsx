@@ -16,7 +16,10 @@ export default function KpiCards() {
 
   const fetchKpis = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/sales/kpis");
+      const res = await axios.get(
+  "https://retail-sales-management-system-xnp0.onrender.com/api/sales/kpis"
+);
+
       setKpis(res.data);
     } catch (err) {
       console.error("KPI fetch error");

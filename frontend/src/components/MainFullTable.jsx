@@ -1,7 +1,8 @@
 import "../styles/table.css";
 
 export default function MainFullTable({ rows }) {
-  // ✅ EMPTY STATE (No search results / conflicting filters)
+
+  // EMPTY STATE (No search results / conflicting filters)
   if (!rows || rows.length === 0) {
     return (
       <div
@@ -20,7 +21,7 @@ export default function MainFullTable({ rows }) {
     );
   }
 
-  // ✅ NORMAL TABLE VIEW
+  // NORMAL TABLE VIEW
   return (
     <div className="table-scroll-container">
       <div style={{ width: "100%", overflowX: "auto" }}>

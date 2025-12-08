@@ -1,20 +1,17 @@
 const Sale = require("../model/Sale");
+const { search } = require("../routes/SalesRoutes");
 
 exports.fetchSales = async ({ q, filters, sort, page, pageSize }) => {
   let mongoQuery = {};
 
-  /* ===========================
-     ✅ 1. SEARCH (Name + Phone)
-     - Case-insensitive
-     - Works with filters & sort
-  ============================ */
+  // name and number search
   if (q && q.trim() !== "") {
   mongoQuery.$or = [
     {
       "Customer Name": { $regex: q, $options: "i" },
     },
     {
-      // ✅ Convert Number → String using $expr for phone search
+    //  number to string and regex match
       $expr: {
         $regexMatch: {
           input: { $toString: "$Phone Number" },
@@ -25,29 +22,25 @@ exports.fetchSales = async ({ q, filters, sort, page, pageSize }) => {
   ];
 }
 
-
-  /* ===========================
-     ✅ 2. FILTERS (ONLY REQUIRED ONES)
-  ============================ */
   if (filters) {
     const parsed = typeof filters === "string" ? JSON.parse(filters) : filters;
 
-    // ✅ Customer Region (multi)
+    // Customer Region (multi)
     if (parsed.customerRegion && parsed.customerRegion.length > 0) {
       mongoQuery["Customer Region"] = { $in: parsed.customerRegion };
     }
 
-    // ✅ Gender (multi)
+    // Gender (multi)
     if (parsed.gender && parsed.gender.length > 0) {
       mongoQuery["Gender"] = { $in: parsed.gender };
     }
 
-    // ✅ Product Category (multi)
+    // Product Category (multi)
     if (parsed.productCategory && parsed.productCategory.length > 0) {
       mongoQuery["Product Category"] = { $in: parsed.productCategory };
     }
 
-    // ✅ Tags (multi, partial match)
+    // Tags (multi, partial match)
     if (parsed.tags && parsed.tags.length > 0) {
       mongoQuery["Tags"] = {
         $regex: parsed.tags.join("|"),
@@ -55,14 +48,12 @@ exports.fetchSales = async ({ q, filters, sort, page, pageSize }) => {
       };
     }
 
-    // ✅ Payment Method (multi)
+    // Payment Method (multi)
     if (parsed.paymentMethod && parsed.paymentMethod.length > 0) {
       mongoQuery["Payment Method"] = { $in: parsed.paymentMethod };
     }
 
-    // ✅ Age Range
-    // ✅ AGE RANGE (FIXED FOR STRING + NUMBER DATA)
-// ✅ SAFE AGE RANGE (WITH VALIDATION)
+    // Age Range
 if (
   (parsed.ageMin !== "" && parsed.ageMin !== undefined) ||
   (parsed.ageMax !== "" && parsed.ageMax !== undefined)
@@ -70,7 +61,7 @@ if (
   const min = Number(parsed.ageMin);
   const max = Number(parsed.ageMax);
 
-  // ✅ Invalid range → force no results
+  // Invalid range - force no results
   if ((min && max && min > max) || min < 0 || max < 0) {
     return {
       data: [],
@@ -93,7 +84,7 @@ if (
 
 
 
-    // ✅ Date Range
+    // Date Range
     if (parsed.dateFrom || parsed.dateTo) {
       mongoQuery["Date"] = {};
       if (parsed.dateFrom) {
@@ -105,9 +96,7 @@ if (
     }
   }
 
-  /* ===========================
-     ✅ 3. SORTING (ONLY REQUIRED)
-  ============================ */
+  // sorting
   let sortQuery = {};
 
   if (sort) {
@@ -126,10 +115,7 @@ if (
     }
   }
 
-  /* ===========================
-     ✅ 4. PAGINATION (STRICT)
-     Page size = 10 (from frontend)
-  ============================ */
+  // pagination
   const total = await Sale.countDocuments(mongoQuery);
 
   const data = await Sale.find(mongoQuery)
