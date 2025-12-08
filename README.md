@@ -44,8 +44,7 @@ Pagination is implemented with a fixed page size of **10 records per page**. It 
    - `PORT`
 4. Start the backend server using `npm run dev`.  
 5. Navigate to the frontend folder and install dependencies using `npm install`.  
-6. Create a `.env` file in the frontend directory and add:
-   - `VITE_BACKEND_URL`
+6. The frontend is already configured to use the deployed backend URL directly (no frontend `.env` file is required).  
 7. Start the frontend using `npm run dev`.  
 8. Open the application in the browser to access the dashboard.
 
