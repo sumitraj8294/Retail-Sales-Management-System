@@ -1,88 +1,165 @@
-
+/* ===========================
+   TABLE CONTAINER
+=========================== */
 .table-scroll-container {
   max-height: 420px;
   overflow: auto;
-  background: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
+  border-radius: 14px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  border: 1px solid #e5e7eb;
 }
 
+/* ===========================
+   MAIN TABLE
+=========================== */
 .sales-table {
   width: 100%;
   border-collapse: collapse;
   font-size: 14px;
-  min-width: 1200px; /* enables horizontal scroll */
+  min-width: 1200px; /* horizontal scroll */
 }
 
+/* ===========================
+   TABLE HEADER
+=========================== */
 .sales-table thead {
-  background: #f1f5f9;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
   position: sticky;
   top: 0;
   z-index: 10;
 }
 
 .sales-table thead th {
-  padding: 12px 14px;
+  padding: 14px 16px;
   text-align: left;
-  font-weight: 600;
-  color: #0f172a;
-  border-bottom: 1px solid #e5e7eb;
+  font-weight: 700;
+  color: white;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
   white-space: nowrap;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  font-size: 12px;
 }
 
+/* ===========================
+   TABLE BODY
+=========================== */
 .sales-table tbody td {
-  padding: 12px 14px;
+  padding: 13px 16px;
   border-bottom: 1px solid #f1f5f9;
-  color: #334155;
+  color: #1f2933;
   white-space: nowrap;
+  transition: all 0.2s ease;
+  font-weight: 500;
 }
 
+/* Zebra stripes */
 .sales-table tbody tr:nth-child(even) {
-  background: #fafafa;
+  background: linear-gradient(90deg, #fbfdff, #f8fafc);
 }
 
+/* Hover effect */
 .sales-table tbody tr:hover {
-  background: #f0f9ff;
-  transition: background 0.2s ease;
+  background: linear-gradient(90deg, #dbeafe, #eff6ff);
+  transform: scale(1.002);
 }
 
-
+/* ===========================
+   AMOUNT COLOR
+=========================== */
 .sales-amount {
-  font-weight: 600;
+  font-weight: 800;
   color: #16a34a;
 }
 
+/* ===========================
+   BADGE STYLES (OPTIONAL)
+=========================== */
+.badge {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  display: inline-block;
+}
 
+.badge.green {
+  background: rgba(22, 163, 74, 0.15);
+  color: #16a34a;
+}
+
+.badge.red {
+  background: rgba(220, 38, 38, 0.15);
+  color: #dc2626;
+}
+
+.badge.blue {
+  background: rgba(37, 99, 235, 0.15);
+  color: #2563eb;
+}
+
+.badge.purple {
+  background: rgba(124, 58, 237, 0.15);
+  color: #7c3aed;
+}
+
+/* ===========================
+   MODAL OVERLAY
+=========================== */
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(2, 6, 23, 0.7);
+  backdrop-filter: blur(3px);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 999;
 }
 
+/* ===========================
+   MODAL CONTENT
+=========================== */
 .modal-content {
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  width: 90%;
-  height: 85%;
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
+  padding: 22px;
+  border-radius: 16px;
+  width: 92%;
+  height: 86%;
   overflow: auto;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
+  animation: zoomIn 0.25s ease;
 }
 
+@keyframes zoomIn {
+  from {
+    transform: scale(0.92);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ===========================
+   CLOSE BUTTON
+=========================== */
 .close-btn {
   float: right;
   border: none;
-  background: #dc2626;
+  background: linear-gradient(135deg, #dc2626, #991b1b);
   color: white;
-  padding: 6px 10px;
-  border-radius: 4px;
+  padding: 7px 14px;
+  border-radius: 999px;
   cursor: pointer;
+  font-weight: 700;
+  box-shadow: 0 6px 16px rgba(220, 38, 38, 0.35);
+  transition: all 0.25s ease;
 }
 
 .close-btn:hover {
-  background: #b91c1c;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(220, 38, 38, 0.45);
 }

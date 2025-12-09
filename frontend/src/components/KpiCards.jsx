@@ -27,28 +27,27 @@ export default function KpiCards() {
   };
 
   return (
-    <div className="kpi-grid">
-      <div className="kpi-card">
-        <p>Total Orders</p>
-        <h2>{kpis.totalOrders}</h2>
-      </div>
+    <div className="kpi-row">
+  <div className="kpi-card kpi-orders">
+    <p>Total Orders</p>
+    <h2>{kpis.totalOrders}</h2>
+  </div>
 
-      <div className="kpi-card">
-        <p>Total Quantity Sold</p>
-        <h2>{kpis.totalQuantity}</h2>
-      </div>
+  <div className="kpi-card kpi-quantity">
+    <p>Total Quantity Sold</p>
+    <h2>{kpis.totalQuantity}</h2>
+  </div>
 
-      <div className="kpi-card">
-        <p>Total Revenue</p>
-        <h2>₹{kpis.totalRevenue.toLocaleString()}</h2>
-      </div>
+  <div className="kpi-card kpi-revenue">
+    <p>Total Revenue</p>
+    <h2>₹{kpis.totalRevenue.toLocaleString()}</h2>
+  </div>
 
-      <div className="kpi-card">
-        <p>Total Discount</p>
-        <h2 style={{ color: "#dc2626" }}>
-          ₹{kpis.totalDiscount.toLocaleString()}
-        </h2>
-      </div>
-    </div>
+  <div className="kpi-card kpi-discount">
+    <p>Total Discount</p>
+    <h2>₹{kpis.totalDiscount.toLocaleString()}</h2>
+  </div>
+</div>
+
   );
 }
