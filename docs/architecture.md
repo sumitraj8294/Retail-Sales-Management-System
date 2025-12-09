@@ -74,7 +74,7 @@ Retail-Sales-Management-System/
 │ │ ├── salesService.js
 │ │
 │ ├── .env
-│ ├── index.js
+│ └── index.js
 │
 ├── frontend/
 │ ├── src/
@@ -84,28 +84,28 @@ Retail-Sales-Management-System/
 │ │ │ ├── MainFullTable.jsx
 │ │ │ ├── Pagination.jsx
 │ │ │ ├── Sidebar.jsx
-│ │ │ ├── TopFilters.jsx
+│ │ │ └── TopFilters.jsx
 │ │ │
 │ │ ├── services/
-│ │ │ ├── api.js
+│ │ │ └── api.js
 │ │ │
 │ │ ├── styles/
 │ │ │ ├── app.css
 │ │ │ ├── dashboard.css
 │ │ │ ├── kpi.css
-│ │ │ ├── table.css
+│ │ │ └── table.css
 │ │ │
 │ │ ├── App.jsx
 │ │ └── main.jsx
 │ │
 │ ├── index.html
 │ ├── package.json
-│ ├── package-lock.json
+│ └── package-lock.json
 │
 ├── docs/
 │ └── architecture.md
 │
-├── README.md
+└── README.md
 
 
 ---
@@ -131,4 +131,5 @@ Retail-Sales-Management-System/
 Each module is designed to follow **single-responsibility principle**, ensuring maintainability and scalability.
 
 ---
+
 
