@@ -61,40 +61,47 @@ Retail-Sales-Management-System/
 │
 ├── backend/
 │ ├── controllers/
-| |  ├── kpiController.js
-| |  ├── salesController.js
+│ │ ├── kpiController.js
+│ │ ├── salesController.js
+│ │
 │ ├── model/
-| |  ├── sale.js
+│ │ ├── sale.js
+│ │
 │ ├── routes/
-| |  ├── salesRoutes.js
+│ │ ├── salesRoutes.js
+│ │
 │ ├── services/
-| |  ├── salesService.js
+│ │ ├── salesService.js
+│ │
 │ ├── .env
 │ ├── index.js
 │
 ├── frontend/
 │ ├── src/
 │ │ ├── components/
-| | | ├── FullTableModal.jsx
-| | | ├── KpiCards.jsx
-| | | ├── MainFullTable.jsx
-| | | ├── Pagination.jsx
-| | | ├── Sidebar.jsx
-| | | ├── TopFilters.jsx
-│ │ ├── services
-| | | ├── api.js
+│ │ │ ├── FullTableModal.jsx
+│ │ │ ├── KpiCards.jsx
+│ │ │ ├── MainFullTable.jsx
+│ │ │ ├── Pagination.jsx
+│ │ │ ├── Sidebar.jsx
+│ │ │ ├── TopFilters.jsx
+│ │ │
+│ │ ├── services/
+│ │ │ ├── api.js
+│ │ │
 │ │ ├── styles/
-| | | ├── app.css
-| | | ├── dashboard.css
-| | | ├── kpi.css
-| | | ├── table.css
+│ │ │ ├── app.css
+│ │ │ ├── dashboard.css
+│ │ │ ├── kpi.css
+│ │ │ ├── table.css
+│ │ │
 │ │ ├── App.jsx
 │ │ └── main.jsx
+│ │
 │ ├── index.html
-| ├── package.json
+│ ├── package.json
 │ ├── package-lock.json
-|
-|
+│
 ├── docs/
 │ └── architecture.md
 │
@@ -124,3 +131,4 @@ Retail-Sales-Management-System/
 Each module is designed to follow **single-responsibility principle**, ensuring maintainability and scalability.
 
 ---
+
