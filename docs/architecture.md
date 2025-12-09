@@ -57,55 +57,62 @@ This creates a **real-time, bi-directional data flow** between frontend and back
 
 ## 4. Folder Structure
 
+## Project Folder Structure
+
+```
 Retail-Sales-Management-System/
+
 │
 ├── backend/
-│ ├── controllers/
-│ │ ├── kpiController.js
-│ │ ├── salesController.js
-│ │
-│ ├── model/
-│ │ ├── sale.js
-│ │
-│ ├── routes/
-│ │ ├── salesRoutes.js
-│ │
-│ ├── services/
-│ │ ├── salesService.js
-│ │
-│ ├── .env
-│ └── index.js
+│   │
+│   ├── controllers/
+│   │   ├── kpiController.js
+│   │   └── salesController.js
+│   │
+│   ├── model/
+│   │   └── sale.js
+│   │
+│   ├── routes/
+│   │   └── salesRoutes.js
+│   │
+│   ├── services/
+│   │   └── salesService.js
+│   │
+│   ├── .env
+│   └── index.js
 │
 ├── frontend/
-│ ├── src/
-│ │ ├── components/
-│ │ │ ├── FullTableModal.jsx
-│ │ │ ├── KpiCards.jsx
-│ │ │ ├── MainFullTable.jsx
-│ │ │ ├── Pagination.jsx
-│ │ │ ├── Sidebar.jsx
-│ │ │ └── TopFilters.jsx
-│ │ │
-│ │ ├── services/
-│ │ │ └── api.js
-│ │ │
-│ │ ├── styles/
-│ │ │ ├── app.css
-│ │ │ ├── dashboard.css
-│ │ │ ├── kpi.css
-│ │ │ └── table.css
-│ │ │
-│ │ ├── App.jsx
-│ │ └── main.jsx
-│ │
-│ ├── index.html
-│ ├── package.json
-│ └── package-lock.json
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── FullTableModal.jsx
+│   │   │   ├── KpiCards.jsx
+│   │   │   ├── MainFullTable.jsx
+│   │   │   ├── Pagination.jsx
+│   │   │   ├── Sidebar.jsx
+│   │   │   └── TopFilters.jsx
+│   │   │
+│   │   ├── services/
+│   │   │   └── api.js
+│   │   │
+│   │   ├── styles/
+│   │   │   ├── app.css
+│   │   │   ├── dashboard.css
+│   │   │   ├── kpi.css
+│   │   │   └── table.css
+│   │   │
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   │
+│   ├── index.html
+│   ├── package.json
+│   └── package-lock.json
 │
 ├── docs/
-│ └── architecture.md
+│   └── architecture.md
 │
 └── README.md
+```
+
 
 
 ---
@@ -131,5 +138,6 @@ Retail-Sales-Management-System/
 Each module is designed to follow **single-responsibility principle**, ensuring maintainability and scalability.
 
 ---
+
 
 
